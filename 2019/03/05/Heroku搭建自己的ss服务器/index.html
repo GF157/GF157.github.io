@@ -276,7 +276,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">596</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">592</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -405,11 +405,11 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="一、前（Fei）言（Hua）"><a href="#一、前（Fei）言（Hua）" class="headerlink" title="一、前（Fei）言（Hua）"></a>一、前（Fei）言（Hua）</h1><p>Heroku是日本一家网站。为开发者提供了免费部署项目的服务器。虽然访问Heroku是被qiang的。但是用Heroku部署后的应用(saas/web app)其主机在美国和欧洲，且主机地址没有被qiang。利用这一点就可以免费搭建一个自己的ss服务器。</p>
+        <h1 id="前（Fei）言（Hua）"><a href="#前（Fei）言（Hua）" class="headerlink" title="前（Fei）言（Hua）"></a>前（Fei）言（Hua）</h1><p>Heroku是日本一家网站。为开发者提供了免费部署项目的服务器。虽然访问Heroku是被qiang的。但是用Heroku部署后的应用(saas/web app)其主机在美国和欧洲，且主机地址没有被qiang。利用这一点就可以免费搭建一个自己的ss服务器。</p>
 <p>速度基本够满足日用吧，看视频的话稍微费点劲</p>
-<h1 id="二、注册Heroku"><a href="#二、注册Heroku" class="headerlink" title="二、注册Heroku"></a>二、注册Heroku</h1><p>到这里注册： <a href="https://signup.heroku.com" target="_blank" rel="noopener">https://signup.heroku.com</a></p>
+<h1 id="注册Heroku"><a href="#注册Heroku" class="headerlink" title="注册Heroku"></a>注册Heroku</h1><p>到这里注册： <a href="https://signup.heroku.com" target="_blank" rel="noopener">https://signup.heroku.com</a></p>
 <p>注：只能使用gmail邮箱注册，国内主流邮箱都没有用</p>
-<h1 id="三、部署"><a href="#三、部署" class="headerlink" title="三、部署"></a>三、部署</h1><p>登录上你的Heroku之后，</p>
+<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><p>登录上你的Heroku之后，</p>
 <p><a href="https://heroku.com/deploy?template=https://github.com/onplus/shadowsocks-heroku/tree/re" target="_blank" rel="noopener">—–》》》点这里《《《—–</a></p>
 <p><ul></ul></p>
 <p><li><strong>App name</strong><ul></ul></li></p>
@@ -417,11 +417,13 @@ height:50vh;
 <p><li><strong>KEY</strong><ul></ul></li></p>
 <p><li>设置一个密码。</li><br><br><br><br>这两个地方我们会在下一步用到。</p>
 <p>一切从简，其他地方不必修改。</p>
-<h1 id="四、启动本地客户端"><a href="#四、启动本地客户端" class="headerlink" title="四、启动本地客户端"></a>四、启动本地客户端</h1><p><li><p>下载：<a href="https://github.com/onplus/shadowsocks-heroku/releases" target="_blank" rel="noopener">https://github.com/onplus/shadowsocks-heroku/releases</a></p></li></p>
+<h1 id="启动本地客户端"><a href="#启动本地客户端" class="headerlink" title="启动本地客户端"></a>启动本地客户端</h1><p><li><p>下载：<a href="https://github.com/onplus/shadowsocks-heroku/releases" target="_blank" rel="noopener">https://github.com/onplus/shadowsocks-heroku/releases</a></p></li></p>
 <p>根据你是什么系统。下载对应的客户端压缩包。</p><br><br><li><p>解压后有个<code>config.json</code>文件：</p><br><pre class="line-numbers language-json"><code class="language-json">  <span class="token punctuation">{</span><br>    <span class="token property">“server”</span><span class="token operator">:</span> <span class="token string">“你设置的AppName.herokuapp.com”</span><span class="token punctuation">,</span><br>    <span class="token property">“local_address”</span><span class="token operator">:</span> <span class="token string">“127.0.0.1”</span><span class="token punctuation">,</span><br>    <span class="token property">“scheme”</span><span class="token operator">:</span> <span class="token string">“ws”</span><span class="token punctuation">,</span><br>    <span class="token property">“local_port”</span><span class="token operator">:</span> <span class="token string">“1080”</span><span class="token punctuation">,</span><br>    <span class="token property">“remote_port”</span><span class="token operator">:</span> <span class="token string">“80”</span><span class="token punctuation">,</span><br>    <span class="token property">“password”</span><span class="token operator">:</span> <span class="token string">“这里输入你设置的密码”</span><span class="token punctuation">,</span><br>    <span class="token property">“timeout”</span><span class="token operator">:</span> <span class="token number">600</span><span class="token punctuation">,</span><br>    <span class="token property">“method”</span><span class="token operator">:</span> <span class="token string">“aes-256-cfb”</span><br>  <span class="token punctuation">}</span><br><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><br></li><br><p>启动</p><li><br><ul><br><li><p>Windows：</p><br><p>直接打开start或ssh的exe文件都可以打开。区别是一个在后台运行了。一个是有黑框界面。</p><br></li><br><li><p>Mac/Linux:</p><br><p>cd到该目录下，执行<code>./ss-h</code> 。你会看到一条server listening at {xxx}的提示。</p>
 
 <p><img src="/images/ss1.png" alt><br></p></li><br></ul><br></li><br><p></p>
-<p>这样本地客户端就启动了。</p><br><h1 id="配置代理"><a href="#配置代理" class="headerlink" title="配置代理"></a>配置代理</h1><p>在Chrome浏览器安装Proxy SwitchyOmega插件</p><br><h2 id="安装Proxy-SwitchyOmega"><a href="#安装Proxy-SwitchyOmega" class="headerlink" title="安装Proxy SwitchyOmega"></a>安装Proxy SwitchyOmega</h2><p><a href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif?utm_source=chrome-ntp-icon" target="_blank" rel="noopener">chrome应用商店下载</a></p><br><ul><br><li><p>不能访问谷歌的到这里下载：</p><br><p><a href="https://extfans.com/" target="_blank" rel="noopener">https://extfans.com/</a></p><br><p>进去后输入id：padekgcemlokbadohgkifijomclgjgif</p><br></li><br></ul><br><h2 id="配置Proxy-SwitchyOmega"><a href="#配置Proxy-SwitchyOmega" class="headerlink" title="配置Proxy SwitchyOmega"></a>配置Proxy SwitchyOmega</h2><p>如图。6步。</p><br><img src="/images/ss2.png" alt><br><p>切换到proxy模式就可以Google了~</p><br><h2 id="进阶配置"><a href="#进阶配置" class="headerlink" title="进阶配置"></a>进阶配置</h2><p>proxy模式就是所有的网站都通过代理来访问。这样其实有点多余。</p><br><p>下面我们通过添加规则，让插件去判断什么情况下启用代理。</p><br><p>在插件的 auto switch里，添加规则列表网站：</p><br><p><code><a href="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</a></code></p><br><p>如图，记得点应用选项以保存。</p><br><img src="/images/ss2.png" alt><br><p>这样你选择auto switch模式，插件就可以按照规则来判断是否使用代理。</p><br><p>如果你想访问的 网站不在规则列表里。在上面的规则上自己添加一个条件就好啦~</p><br><p>本篇教程结束。这种方法永久免费还不会被封。</p>
+<p>这样本地客户端就启动了。</p>
+
+<h1 id="配置代理"><a href="#配置代理" class="headerlink" title="配置代理"></a>配置代理</h1><p>在Chrome浏览器安装Proxy SwitchyOmega插件</p><br><h2 id="安装Proxy-SwitchyOmega"><a href="#安装Proxy-SwitchyOmega" class="headerlink" title="安装Proxy SwitchyOmega"></a>安装Proxy SwitchyOmega</h2><p><a href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif?utm_source=chrome-ntp-icon" target="_blank" rel="noopener">chrome应用商店下载</a></p><br><ul><br><li><p>不能访问谷歌的到这里下载：</p><br><p><a href="https://extfans.com/" target="_blank" rel="noopener">https://extfans.com/</a></p><br><p>进去后输入id：padekgcemlokbadohgkifijomclgjgif</p><br></li><br></ul><br><h2 id="配置Proxy-SwitchyOmega"><a href="#配置Proxy-SwitchyOmega" class="headerlink" title="配置Proxy SwitchyOmega"></a>配置Proxy SwitchyOmega</h2><p>如图。6步。</p><br><img src="/images/ss2.png" alt><br><p>切换到proxy模式就可以Google了~</p><br><h2 id="进阶配置"><a href="#进阶配置" class="headerlink" title="进阶配置"></a>进阶配置</h2><p>proxy模式就是所有的网站都通过代理来访问。这样其实有点多余。</p><br><p>下面我们通过添加规则，让插件去判断什么情况下启用代理。</p><br><p>在插件的 auto switch里，添加规则列表网站：</p><br><p><code><a href="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</a></code></p><br><p>如图，记得点应用选项以保存。</p><br><img src="/images/ss2.png" alt><br><p>这样你选择auto switch模式，插件就可以按照规则来判断是否使用代理。</p><br><p>如果你想访问的 网站不在规则列表里。在上面的规则上自己添加一个条件就好啦~</p><br><p>本篇教程结束。这种方法永久免费还不会被封。</p>
 
     </article>
     <!-- license  -->
@@ -430,7 +432,7 @@ height:50vh;
             <p>原文作者：<a href="http://gogf.club">gogf</a>
             </p><p>原文链接：<a href="http://gogf.club/2019/03/05/Heroku搭建自己的ss服务器/">http://gogf.club/2019/03/05/Heroku搭建自己的ss服务器/</a>
             </p><p>发表日期：<a href="http://gogf.club/2019/03/05/Heroku搭建自己的ss服务器/">March 5th 2019, 5:49:35 pm</a>
-            </p><p>更新日期：<a href="http://gogf.club/2019/03/05/Heroku搭建自己的ss服务器/">March 5th 2019, 6:14:03 pm</a>
+            </p><p>更新日期：<a href="http://gogf.club/2019/03/05/Heroku搭建自己的ss服务器/">March 5th 2019, 6:19:34 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -562,7 +564,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、前（Fei）言（Hua）"><span class="toc-number">1.</span> <span class="toc-text">一、前（Fei）言（Hua）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、注册Heroku"><span class="toc-number">2.</span> <span class="toc-text">二、注册Heroku</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、部署"><span class="toc-number">3.</span> <span class="toc-text">三、部署</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、启动本地客户端"><span class="toc-number">4.</span> <span class="toc-text">四、启动本地客户端</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置代理"><span class="toc-number">5.</span> <span class="toc-text">配置代理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Proxy-SwitchyOmega"><span class="toc-number">5.1.</span> <span class="toc-text">安装Proxy SwitchyOmega</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置Proxy-SwitchyOmega"><span class="toc-number">5.2.</span> <span class="toc-text">配置Proxy SwitchyOmega</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进阶配置"><span class="toc-number">5.3.</span> <span class="toc-text">进阶配置</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前（Fei）言（Hua）"><span class="toc-number">1.</span> <span class="toc-text">前（Fei）言（Hua）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#注册Heroku"><span class="toc-number">2.</span> <span class="toc-text">注册Heroku</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#部署"><span class="toc-number">3.</span> <span class="toc-text">部署</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#启动本地客户端"><span class="toc-number">4.</span> <span class="toc-text">启动本地客户端</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置代理"><span class="toc-number">5.</span> <span class="toc-text">配置代理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Proxy-SwitchyOmega"><span class="toc-number">5.1.</span> <span class="toc-text">安装Proxy SwitchyOmega</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置Proxy-SwitchyOmega"><span class="toc-number">5.2.</span> <span class="toc-text">配置Proxy SwitchyOmega</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进阶配置"><span class="toc-number">5.3.</span> <span class="toc-text">进阶配置</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -647,15 +649,15 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="日常"><span class="iconfont-archer">&#xe606;</span>日常</span>
+    
+        <span class="sidebar-tag-name" data-tags="blog"><span class="iconfont-archer">&#xe606;</span>blog</span>
+    
         <span class="sidebar-tag-name" data-tags="教程"><span class="iconfont-archer">&#xe606;</span>教程</span>
     
         <span class="sidebar-tag-name" data-tags="SS"><span class="iconfont-archer">&#xe606;</span>SS</span>
     
         <span class="sidebar-tag-name" data-tags="Heroku"><span class="iconfont-archer">&#xe606;</span>Heroku</span>
-    
-        <span class="sidebar-tag-name" data-tags="日常"><span class="iconfont-archer">&#xe606;</span>日常</span>
-    
-        <span class="sidebar-tag-name" data-tags="blog"><span class="iconfont-archer">&#xe606;</span>blog</span>
     
         <span class="sidebar-tag-name" data-tags="踩坑"><span class="iconfont-archer">&#xe606;</span>踩坑</span>
     
