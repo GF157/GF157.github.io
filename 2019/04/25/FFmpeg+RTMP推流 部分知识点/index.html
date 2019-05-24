@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>今晚做个好梦</title>
+    <title>FFmpeg · 今晚做个好梦</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">今晚做个好梦</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">FFmpeg</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">今晚做个好梦</a>
 </header>
@@ -220,24 +231,68 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            FFmpeg
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.7k</span>阅读时长: <span class="post-count reading-time">6 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/04/25</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,335 +393,179 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/25/网络相关/">
-            
-                <span>FFmpeg网络相关</span>
-        </a>
-        <div class="abstract-content">
-            直播流程采集 → 编码推流 → 网络分发 → 解码 → 播放
-三个等级：
-伪实时：视频消费延迟超过 3 秒，单向观看实时，通用架构是 CDN + RTMP + HLS，譬如很多的直播平台
-准实时： 视频消费延迟 1 ~ 3 秒，能进行双方互动但互动有障碍；可以通过 TCP/UDP + FLV 已经实现了这类技术，譬如 YY 直播等
-真实时：视频消费延迟
-视频编解码视频实际上就是一帧一帧的图片，拼接起来进行播放；标准的图像格式使用 RGB 三字节描述像素颜色值，会占用较大的存储空间与带宽。视频编解码器会根据前后图像的变化做运动检测，通过各种压缩把变化的结果发送到对方。
-实时视频编码器需要考...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/25</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/25/FFmpeg+RTMP推流 部分知识点/">
-            
-                <span>FFmpeg</span>
-        </a>
-        <div class="abstract-content">
-            #RTMP推流  知识点AVFormatContext重点字节在使用FFMPEG进行开发的时候，AVFormatContext是一个贯穿始终的数据结构，很多函数都要用到它作为参数。它是FFMPEG解封装（flv，mp4，rmvb，avi）功能的结构体。
-雷神整理：
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="RTMP推流-知识点"><a href="#RTMP推流-知识点" class="headerlink" title="#RTMP推流  知识点"></a>#RTMP推流  知识点</h2><h2 id="AVFormatContext"><a href="#AVFormatContext" class="headerlink" title="AVFormatContext"></a>AVFormatContext</h2><h4 id="重点字节"><a href="#重点字节" class="headerlink" title="重点字节"></a>重点字节</h4><p>在使用FFMPEG进行开发的时候，AVFormatContext是一个贯穿始终的数据结构，很多函数都要用到它作为参数。它是FFMPEG解封装（flv，mp4，rmvb，avi）功能的结构体。</p>
+<pre><code>雷神整理：
 
 struct AVInputFormat *iformat：输入数据的封装格式
 AVIOContext *pb：输入数据的缓存
 unsigned int nb_streams：视音频流的个数
 AVStream **streams：视音频流
 char filename[1024]：文件名
-int64_t duration：时长...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/25</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/25/暂存/">
-            
-                <span>直播工具画中画功能</span>
-        </a>
-        <div class="abstract-content">
-            画中画进度
-新增功能添加了切换桌面与摄像头大小切换的功能，通过RtmpManager中m_pPreView控制
-添加了新的小图层，目前大小和位置为固定状态，可在CVideoShowMain::DrawVideoCamGDI()中调整
-具体实现：
-1、切换大小
-在主函数中调用SetPreviewShow()方法更改 大小标识m_pPreView;当m_pPreView 为true时 桌面窗口大
-直播桌面时  RtmpManager::screenCaptureFun() 通过m_pPreView状态 ，调整DIB数据输出位置，改变大小。直播摄像头时 CVideoCaptureRender:...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/25</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/25/使用代理IP池/">
-            
-                <span>使用代理IP池</span>
-        </a>
-        <div class="abstract-content">
-            使用IP代理池 proxy_pool 代理池源码：点这里
- 或者： 1git clone git@github.com:jhao104/proxy_pool.git
-下载安装数据库官网下载点》》这里压缩包解压到目录即可
-打开数据库12cd D:\Redis-x64-3.2.100redis-server.exe redis.windows.conf
-打开新的cmd窗口12redis-cli.exe -h 127.0.0.1 -p 6379127.0.0.1:6379&gt;ping
-输出为PONG即成功
-或者加入系统服务 下次直接启动即可 也可自动打开1234//加入系统服务redis-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="scrapy">scrapy</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="IP代理池">IP代理池</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/25/FFmpeg+RECT推流部分/">
-            
-                <span>FFmpeg部分知识点</span>
-        </a>
-        <div class="abstract-content">
-            #RTMP推流AVFormatContext在使用FFMPEG进行开发的时候，AVFormatContext是一个贯穿始终的数据结构，很多函数都要用到它作为参数。它是FFMPEG解封装（flv，mp4，rmvb，avi）功能的结构体。
-struct AVInputFormat *iformat：输入数据的封装格式
-AVIOContext *pb：输入数据的缓存
-unsigned int nb_streams：视音频流的个数
-AVStream **streams：视音频流
-char filename[1024]：文件名
-int64_t duration：时长（单位：微秒us，转换为秒需要除...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/25</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/25/note/">
-            
-                <span>使用代理IP池</span>
-        </a>
-        <div class="abstract-content">
-            ##编译FFmpeg所运行命令./configure –arch=x86 –target-os=win32 –enable-shared –disable-static –enable-memalign-hack –toolchain=msvc –enable-gpl –enable-libx264 –enable-libfdk_aac –enable-nonfree –disable-optimizations –extra-cflags=”-I./add_lib/include” –extra-ldflags=”-LIBPATH:./add_lib/lib” –extra-ldfla...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/25</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/25/push_log/">
-            
-                <span>日志对应</span>
-        </a>
-        <div class="abstract-content">
-            日志推送
-Key：PutClick用户主动点击操作
-####msg:
+int64_t duration：时长（单位：微秒us，转换为秒需要除以1000000）
+int bit_rate：比特率（单位bps，转换为kbps需要除以1000）
+AVDictionary *metadata：元数据
+</code></pre><p><strong>备注</strong>：总流的比特率以bit/s为单位，如果流不可用，该值为0。如果流文件大小和时长已知，不要直接设置它，FFmpeg会自动计算。</p>
+<pre><code>struct AVInputFormat *iformat;//输入数据的封装格式。仅解封装用，由avformat_open_input()设置。
+struct AVOutputFormat *oformat;//输出数据的封装格式。仅封装用，调用者在avformat_write_header()之前设置。
+AVIOContext *pb;// I/O上下文。
+解封装：由用户在avformat_open_input()之前设置（然后用户必须手动关闭它）或通过avformat_open_input()设置。
+封装：由用户在avformat_write_header()之前设置。 调用者必须注意关闭/释放IO上下文。
+unsigned int nb_streams;//AVFormatContext.streams中元素的个数。
+AVStream **streams;//文件中所有流的列表。
+char filename[1024];//输入输出文件名。
+int64_t start_time;//第一帧的位置。
+int64_t duration;//流的持续时间
+int64_t bit_rate;//总流比特率（bit / s），如果不可用则为0。 
+int64_t probesize;
+//从输入读取的用于确定输入容器格式的数据的最大大小。
+仅封装用，由调用者在avformat_open_input()之前设置。
+AVDictionary *metadata;//元数据
+AVCodec *video_codec;//视频编解码器
+AVCodec *audio_codec;//音频编解码器
+AVCodec *subtitle_codec;//字母编解码器
+AVCodec *data_codec;//数据编解码器
+int (*io_open)(struct AVFormatContext *s, AVIOContext **pb, const char *url, int flags, AVDictionary **options);
+//打开IO stream的回调函数。
+void (*io_close)(struct AVFormatContext *s, AVIOContext *pb);
+//关闭使用AVFormatContext.io_open()打开的流的回调函数。
+</code></pre><h2 id="AVStream"><a href="#AVStream" class="headerlink" title="AVStream"></a>AVStream</h2><p>AVStream是存储每一个视频/音频流信息的结构体。</p>
+<h4 id="重点字节-1"><a href="#重点字节-1" class="headerlink" title="重点字节"></a>重点字节</h4><pre><code>int index：标识该视频/音频流
 
-登陆成功 LoginSuc
-登陆失败 LoginFail
-开始直播 StartBro
-关闭直播 StopBro
-开始录制 StartRecSuc
-停止录制 StopRec
-录制开启失败（未开启直播）StartRecFailed 
-关闭窗口 CloseWin
-最小化窗口 MinBth
-直播窗口 windowsWnd
-直播软件 software
-打开降噪 NsOpen
-关闭降噪 NsClose
-打开背景音乐 MixOpen
-关闭背景音乐 MixClose
-刷新配置_刷新成功 RefreshChange
-刷新配置_未刷新 ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/25</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/03/11/IOS端Thor-Banana免费使用/">
-            
-                <span>IOS端Thor+Banana免费使用</span>
-        </a>
-        <div class="abstract-content">
-            阅读须知：1、此教程会用到电脑 手边没有电脑的等晚点有电脑再看2、另外过程中会涉及到Apple账号登陆，账号密码加微信索取（主页有二维码）3、需要下载到的app：Thor1.34、TestFlight、Banana   Thor需要装两遍，需要电脑安装同步推软件进行验证，并且使用过程较为繁琐，不能保证短期内不失效，所以嫌麻烦的还是去用小火箭。
-教程开始：首先下载thor1.2，thor1.34开始加入设备验证，不能多台账户同时存在。点这里下载
-未完….
+AVCodecContext *codec：指向该视频/音频流的AVCodecContext（它们是一一对应的关系）
 
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="科学上网、梯子、教程">科学上网、梯子、教程</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/03/05/PhotoShop-CC-2018-弹窗内存不足/">
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/06/Heroku搭建自己的ss服务器/">
-            
-                <span>Heroku搭建自己的ss服务器</span>
-        </a>
-        <div class="abstract-content">
-            前（Fei）言（Hua）Heroku是日本一家网站。为开发者提供了免费部署项目的服务器。虽然访问Heroku是被qiang的。但是用Heroku部署后的应用(saas/web app)其主机在美国和欧洲，且主机地址没有被qiang。利用这一点就可以免费搭建一个自己的ss服务器。
-速度基本够满足日用吧，看视频的话稍微费点劲
-注册Heroku到这里注册： https://signup.heroku.com
-注：只能使用gmail邮箱注册，国内主流邮箱都没有用
-部署登录上你的Heroku之后，
-—–》》》点这里《《《—–
+AVRational time_base：时基。通过该值可以把PTS，DTS转化为真正的时间。FFMPEG其他结构体中也有这个字段，但是根据我的经验，只有AVStream中的time_base是可用的。
+PTS*time_base=真正的时间
 
-App name
-起个名字。是唯一标识的。会提示你可不可用。
-KEY
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="教程">教程</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="SS">SS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Heroku">Heroku</a>
-    
-</div>
-            
-        </div>
+int64_t duration：该视频/音频流长度
+
+AVDictionary *metadata：元数据信息
+
+AVRational avg_frame_rate：帧率（注：对视频来说，这个挺重要的）
+
+AVPacket attached_pic：附带的图片。比如说一些MP3，AAC音频文件附带的专辑封面。
+
+AVRational time_base : 区别于AVCodecContext time_base,后者为用户自定义
+</code></pre><p><strong>备注</strong>： </p>
+<pre><code>**avg _ frame_ rate** 平均帧率
+
+avstream里的 time_base 是单元时间 在av_write_header里设置的 
+
+AVCodecContex里的 time_base 表示帧率用户设置的 
+
+在编码过程中，通过这两个time_base 和 pts 可以计算（av_rescale_q）出编码packet里的实际pts 
+
+分流: 在创建流时或者才函数avformat_find_stream_info()函数中可能被设置。
+
+混流: 可能在avformat_write_header()函数调用前被设置
+
+// 帧率做分母，秒做分子，那么time_base也就是一帧所用时间。（时间基！） 
+c-&gt;time_base.den = STREAM_FRAME_RATE; 
+c-&gt;time_base.num = 1; 
+</code></pre><h2 id="AVCodecContext"><a href="#AVCodecContext" class="headerlink" title="AVCodecContext"></a>AVCodecContext</h2><pre><code>enum AVMediaType codec_type：编解码器的类型（视频，音频...）
+
+struct AVCodec  *codec：采用的解码器AVCodec（H.264,MPEG2...）
+
+int bit_rate：平均比特率
+
+uint8_t *extradata; int extradata_size：针对特定编码器包含的附加信息（例如对于H.264解码器来说，存储SPS，PPS等）
+
+AVRational time_base：根据该参数，可以把PTS转化为实际的时间（单位为秒s）
+
+int width, height：如果是视频的话，代表宽和高
+
+int refs：运动估计参考帧的个数（H.264的话会有多帧，MPEG2这类的一般就没有了）
+
+int sample_rate：采样率（音频）
+
+int channels：声道数（音频）
+
+enum AVSampleFormat sample_fmt：采样格式
+
+int profile：型（H.264里面就有，其他编码标准应该也有）
+
+int level：级（和profile差不太多）
+</code></pre><h2 id="AVPacket"><a href="#AVPacket" class="headerlink" title="AVPacket"></a>AVPacket</h2><p>AVPacket是存储压缩编码数据相关信息的结构体。</p>
+<pre><code>uint8_t *data：压缩编码的数据。
+ 例如对于H.264来说。1个AVPacket的data通常对应一个NAL。
+ 注意：在这里只是对应，而不是一模一样。他们之间有微小的差别：使用FFMPEG类库分离出多媒体文件中的H.264码流
+ 因此在使用FFMPEG进行视音频处理的时候，常常可以将得到的AVPacket的data数据直接写成文件，从而得到视音频的码流文件。
+int   size：data的大小
+int64_t pts：显示时间戳
+int64_t dts：解码时间戳
+int   stream_index：标识该AVPacket所属的视频/音频流。
+</code></pre><p>针对data做一下说明：对于H.264格式来说，在使用FFMPEG进行视音频处理的时候，我们常常可以将得到的AVPacket的data数据直接写成文件，从而得到视音频的码流文件。</p>
+<p>#生成关系：<br>（-&gt;表示 派生出）</p>
+<pre><code>AVFormatContext-&gt;AVStream-&gt;AVCodecContext-&gt;AVCodec
+</code></pre><h3 id="FFMPEG中最关键的结构体之间的关系"><a href="#FFMPEG中最关键的结构体之间的关系" class="headerlink" title="FFMPEG中最关键的结构体之间的关系:"></a><a href="http://blog.csdn.net/leixiaohua1020/article/details/11693997" target="_blank" rel="noopener">FFMPEG中最关键的结构体之间的关系</a>:</h3><p>AVFormatContext：统领全局的基本结构体。主要用于处理封装格式（FLV/MKV/RMVB等）。</p>
+<p>AVIOContext：输入输出对应的结构体，用于输入输出（读写文件，RTMP协议等）。</p>
+<p>AVStream，AVCodecContext：视音频流对应的结构体，用于视音频编解码。</p>
+<p>AVFrame：存储非压缩的数据（视频对应RGB/YUV像素数据，音频对应PCM采样数据）解码前数据</p>
+<p>AVPacket：存储压缩数据（视频对应H.264等码流数据，音频对应AAC/MP3等码流数据）解码后数据</p>
+<p><img src="https://img-blog.csdn.net/20150303154557805" alt></p>
+<h3 id="深入理解pts，dts，time-base"><a href="#深入理解pts，dts，time-base" class="headerlink" title="深入理解pts，dts，time_base"></a><a href="https://blog.csdn.net/bixinwei22/article/details/78770090" target="_blank" rel="noopener">深入理解pts，dts，time_base</a></h3><p><a href="https://ask.qcloudimg.com/http-save/yehe-2929716/ra1gfnkqgy.png?imageView2/2/w/1620" target="_blank" rel="noopener">流程图</a></p>
+<p>##av _packet _unref<br>将缓存空间的引用计数-1，并将Packet中的其他字段设为初始值。如果引用计数为0，自动的释放缓存空间。<br>所以，有两个Packet共享同一个数据缓存空间的时候可用这么做</p>
+<h2 id="av-packet-clone"><a href="#av-packet-clone" class="headerlink" title="av_ packet _clone"></a>av_ packet _clone</h2><p> 其功能是 av _packet _alloc + av _packet _ref</p>
+<p>av _packet _alloc 创建一个AVPacket，将其字段设为默认值（data为空，没有数据缓存空间）。</p>
+<p>av _packet _ref 共享数据缓存空间</p>
+<p>##avio_open<br>打开FFmpeg的输入输出文件</p>
+<pre><code>int avio_open2(AVIOContext **s, const char *url, int flags,const AVIOInterruptCB *int_cb, AVDictionary **options);
+
+s：函数调用成功之后创建的AVIOContext结构体。
+url：输入输出协议的地址（文件也是一种“广义”的协议，对于文件来说就是文件的路径）。
+flags：打开地址的方式。可以选择只读，只写，或者读写。取值如下。
+ AVIO_FLAG_READ：只读。
+ AVIO_FLAG_WRITE：只写。
+ AVIO_FLAG_READ_WRITE：读写。
+</code></pre><p>##avformat _write _header<br>写入头部信息</p>
+<h2 id="av-interleaved-write-frame"><a href="#av-interleaved-write-frame" class="headerlink" title="av_ interleaved_write _ frame"></a>av_ interleaved_write _ frame</h2><p>写入H264到mp4  输出一帧视音频数据</p>
+<p>#<a href="https://blog.csdn.net/xiaojun111111/article/details/53197108" target="_blank" rel="noopener">AVPacket更多信息</a></p>
+
     </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://gogf.club">gogf</a>
+            </p><p>原文链接：<a href="http://gogf.club/2019/04/25/FFmpeg+RTMP推流 部分知识点/">http://gogf.club/2019/04/25/FFmpeg+RTMP推流 部分知识点/</a>
+            </p><p>发表日期：<a href="http://gogf.club/2019/04/25/FFmpeg+RTMP推流 部分知识点/">April 25th 2019, 8:50:40 pm</a>
+            </p><p>更新日期：<a href="http://gogf.club/2019/04/25/FFmpeg+RTMP推流 部分知识点/">May 24th 2019, 3:59:43 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/04/25/网络相关/" title="FFmpeg网络相关">
+                    <div class="nextTitle">FFmpeg网络相关</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/04/25/暂存/" title="直播工具画中画功能">
+                    <div class="prevTitle">直播工具画中画功能</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-    <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">NEXT &#62;</a>
-    </nav>
     
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -765,6 +664,24 @@ KEY
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#RTMP推流-知识点"><span class="toc-number">1.</span> <span class="toc-text">#RTMP推流  知识点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AVFormatContext"><span class="toc-number">2.</span> <span class="toc-text">AVFormatContext</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#重点字节"><span class="toc-number">2.0.1.</span> <span class="toc-text">重点字节</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AVStream"><span class="toc-number">3.</span> <span class="toc-text">AVStream</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#重点字节-1"><span class="toc-number">3.0.1.</span> <span class="toc-text">重点字节</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AVCodecContext"><span class="toc-number">4.</span> <span class="toc-text">AVCodecContext</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AVPacket"><span class="toc-number">5.</span> <span class="toc-text">AVPacket</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#FFMPEG中最关键的结构体之间的关系"><span class="toc-number">5.1.</span> <span class="toc-text">FFMPEG中最关键的结构体之间的关系:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#深入理解pts，dts，time-base"><span class="toc-number">5.2.</span> <span class="toc-text">深入理解pts，dts，time_base</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#av-packet-clone"><span class="toc-number">6.</span> <span class="toc-text">av_ packet _clone</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#av-interleaved-write-frame"><span class="toc-number">7.</span> <span class="toc-text">av_ interleaved_write _ frame</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1093,6 +1010,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

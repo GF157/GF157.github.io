@@ -346,6 +346,95 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/04/25/网络相关/">
+            
+                <span>FFmpeg网络相关</span>
+        </a>
+        <div class="abstract-content">
+            直播流程采集 → 编码推流 → 网络分发 → 解码 → 播放
+三个等级：
+伪实时：视频消费延迟超过 3 秒，单向观看实时，通用架构是 CDN + RTMP + HLS，譬如很多的直播平台
+准实时： 视频消费延迟 1 ~ 3 秒，能进行双方互动但互动有障碍；可以通过 TCP/UDP + FLV 已经实现了这类技术，譬如 YY 直播等
+真实时：视频消费延迟
+视频编解码视频实际上就是一帧一帧的图片，拼接起来进行播放；标准的图像格式使用 RGB 三字节描述像素颜色值，会占用较大的存储空间与带宽。视频编解码器会根据前后图像的变化做运动检测，通过各种压缩把变化的结果发送到对方。
+实时视频编码器需要考...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/25</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/04/25/FFmpeg+RTMP推流 部分知识点/">
+            
+                <span>FFmpeg</span>
+        </a>
+        <div class="abstract-content">
+            #RTMP推流  知识点AVFormatContext重点字节在使用FFMPEG进行开发的时候，AVFormatContext是一个贯穿始终的数据结构，很多函数都要用到它作为参数。它是FFMPEG解封装（flv，mp4，rmvb，avi）功能的结构体。
+雷神整理：
+
+struct AVInputFormat *iformat：输入数据的封装格式
+AVIOContext *pb：输入数据的缓存
+unsigned int nb_streams：视音频流的个数
+AVStream **streams：视音频流
+char filename[1024]：文件名
+int64_t duration：时长...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/25</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/04/25/暂存/">
+            
+                <span>直播工具画中画功能</span>
+        </a>
+        <div class="abstract-content">
+            画中画进度
+新增功能添加了切换桌面与摄像头大小切换的功能，通过RtmpManager中m_pPreView控制
+添加了新的小图层，目前大小和位置为固定状态，可在CVideoShowMain::DrawVideoCamGDI()中调整
+具体实现：
+1、切换大小
+在主函数中调用SetPreviewShow()方法更改 大小标识m_pPreView;当m_pPreView 为true时 桌面窗口大
+直播桌面时  RtmpManager::screenCaptureFun() 通过m_pPreView状态 ，调整DIB数据输出位置，改变大小。直播摄像头时 CVideoCaptureRender:...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/25</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/04/25/使用代理IP池/">
             
                 <span>使用代理IP池</span>
@@ -375,6 +464,101 @@
         <a class="post-tag" href="javascript:void(0);" data-tags="IP代理池">IP代理池</a>
     
 </div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/04/25/FFmpeg+RECT推流部分/">
+            
+                <span>FFmpeg部分知识点</span>
+        </a>
+        <div class="abstract-content">
+            #RTMP推流AVFormatContext在使用FFMPEG进行开发的时候，AVFormatContext是一个贯穿始终的数据结构，很多函数都要用到它作为参数。它是FFMPEG解封装（flv，mp4，rmvb，avi）功能的结构体。
+struct AVInputFormat *iformat：输入数据的封装格式
+AVIOContext *pb：输入数据的缓存
+unsigned int nb_streams：视音频流的个数
+AVStream **streams：视音频流
+char filename[1024]：文件名
+int64_t duration：时长（单位：微秒us，转换为秒需要除...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/25</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/04/25/note/">
+            
+                <span>使用代理IP池</span>
+        </a>
+        <div class="abstract-content">
+            ##编译FFmpeg所运行命令./configure –arch=x86 –target-os=win32 –enable-shared –disable-static –enable-memalign-hack –toolchain=msvc –enable-gpl –enable-libx264 –enable-libfdk_aac –enable-nonfree –disable-optimizations –extra-cflags=”-I./add_lib/include” –extra-ldflags=”-LIBPATH:./add_lib/lib” –extra-ldfla...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/25</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/04/25/push_log/">
+            
+                <span>日志对应</span>
+        </a>
+        <div class="abstract-content">
+            日志推送
+Key：PutClick用户主动点击操作
+####msg:
+
+登陆成功 LoginSuc
+登陆失败 LoginFail
+开始直播 StartBro
+关闭直播 StopBro
+开始录制 StartRecSuc
+停止录制 StopRec
+录制开启失败（未开启直播）StartRecFailed 
+关闭窗口 CloseWin
+最小化窗口 MinBth
+直播窗口 windowsWnd
+直播软件 software
+打开降噪 NsOpen
+关闭降噪 NsClose
+打开背景音乐 MixOpen
+关闭背景音乐 MixClose
+刷新配置_刷新成功 RefreshChange
+刷新配置_未刷新 ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/25</span>
+            </div>
+            <!-- tags  -->
             
         </div>
     </article>
@@ -417,6 +601,29 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2019/03/05/PhotoShop-CC-2018-弹窗内存不足/">
+            
+                <span>[Untitled Post]</span>
+        </a>
+        <div class="abstract-content">
+            
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/05</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2019/02/06/Heroku搭建自己的ss服务器/">
             
                 <span>Heroku搭建自己的ss服务器</span>
@@ -448,43 +655,6 @@ KEY
         <a class="post-tag" href="javascript:void(0);" data-tags="SS">SS</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="Heroku">Heroku</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/05/PhotoShop-CC-2018-弹窗内存不足/">
-            
-                <span>PhotoShop CC 2018 弹窗内存不足</span>
-        </a>
-        <div class="abstract-content">
-            问题：今天有个朋友问我关于Photoshop弹窗内存不足的情况。网上很多方法，修改首选项，修改缓存等等，试了之后发现都不管用。
-
-一开始我觉得这是ps版本的问题，于是….
-朋友从昨天到今天下载了cc2015、cc2017、cc2018三个不同版本，不同安装方法的Photoshop。然而并没有什么卵用疯狂报错，一个接一个…
-查了很久的资料，最后在一个不知名论坛，真的实名diss这个论坛，我只是想看看解决问题的方法，需要注册还能理解，要求我必须修改初始密码，添加密保问题到最后我看到了问题解决方法，共使用了三次忘记密码功能，修改了四次密保问题。
-死马当活马医；果然马还是活了。
-也就是这个方法，...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="踩坑">踩坑</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="PhotoShop">PhotoShop</a>
     
 </div>
             
@@ -649,9 +819,93 @@ KEY
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 5
+        Total : 11
         </div>
         <!-- search  -->
         
@@ -667,7 +921,37 @@ KEY
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">04/25</span><a class="archive-post-title" href="/2019/04/25/push_log/">日志对应</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/25</span><a class="archive-post-title" href="/2019/04/25/note/">使用代理IP池</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/25</span><a class="archive-post-title" href="/2019/04/25/FFmpeg+RECT推流部分/">FFmpeg部分知识点</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">04/25</span><a class="archive-post-title" href="/2019/04/25/使用代理IP池/">使用代理IP池</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/25</span><a class="archive-post-title" href="/2019/04/25/暂存/">直播工具画中画功能</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/25</span><a class="archive-post-title" href="/2019/04/25/FFmpeg+RTMP推流 部分知识点/">FFmpeg</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/25</span><a class="archive-post-title" href="/2019/04/25/网络相关/">FFmpeg网络相关</a>
         </li>
     
     
@@ -676,13 +960,31 @@ KEY
         </li>
     
     
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
         <li class="archive-post-item">
-            <span class="archive-post-date">02/06</span><a class="archive-post-title" href="/2019/02/06/Heroku搭建自己的ss服务器/">Heroku搭建自己的ss服务器</a>
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href="/2019/03/05/PhotoShop-CC-2018-弹窗内存不足/">[Untitled Post]</a>
         </li>
     
     
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
         <li class="archive-post-item">
-            <span class="archive-post-date">01/05</span><a class="archive-post-title" href="/2019/01/05/PhotoShop-CC-2018-弹窗内存不足/">PhotoShop CC 2018 弹窗内存不足</a>
+            <span class="archive-post-date">02/06</span><a class="archive-post-title" href="/2019/02/06/Heroku搭建自己的ss服务器/">Heroku搭建自己的ss服务器</a>
         </li>
     
     
@@ -721,10 +1023,6 @@ KEY
         <span class="sidebar-tag-name" data-tags="scrapy"><span class="iconfont-archer">&#xe606;</span>scrapy</span>
     
         <span class="sidebar-tag-name" data-tags="IP代理池"><span class="iconfont-archer">&#xe606;</span>IP代理池</span>
-    
-        <span class="sidebar-tag-name" data-tags="踩坑"><span class="iconfont-archer">&#xe606;</span>踩坑</span>
-    
-        <span class="sidebar-tag-name" data-tags="PhotoShop"><span class="iconfont-archer">&#xe606;</span>PhotoShop</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

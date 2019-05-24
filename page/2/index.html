@@ -78,8 +78,6 @@
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
     
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -203,8 +201,10 @@
 </head>
 
     
+        <body class="home-body">
     
-<header class="header">
+    
+<header class="header index-header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -220,21 +220,34 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 文章页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(https://source.unsplash.com/random/1024x768)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
+            今晚做个好梦
+            <!-- 文章页  -->
+            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
+            
+            
+                Wake me up next month.
+            
+            <!-- 文章页  -->
             
         </p>
         <!-- 文章页meta -->
@@ -346,315 +359,25 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/04/25/网络相关/">
+        <a class="abstract-title" href="/2018/12/05/my-first-blog/">
             
-                <span>FFmpeg网络相关</span>
+                <span>四小时秃头大战</span>
         </a>
         <div class="abstract-content">
-            直播流程采集 → 编码推流 → 网络分发 → 解码 → 播放
-三个等级：
-伪实时：视频消费延迟超过 3 秒，单向观看实时，通用架构是 CDN + RTMP + HLS，譬如很多的直播平台
-准实时： 视频消费延迟 1 ~ 3 秒，能进行双方互动但互动有障碍；可以通过 TCP/UDP + FLV 已经实现了这类技术，譬如 YY 直播等
-真实时：视频消费延迟
-视频编解码视频实际上就是一帧一帧的图片，拼接起来进行播放；标准的图像格式使用 RGB 三字节描述像素颜色值，会占用较大的存储空间与带宽。视频编解码器会根据前后图像的变化做运动检测，通过各种压缩把变化的结果发送到对方。
-实时视频编码器需要考...
-        </div>
+            <p>  早就听闻Github牛逼，应该是程序员必学神器吧，身为还没秃头的程序员怎能有不努力的理由。<br>
+        </p></div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/25</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/25/FFmpeg+RTMP推流 部分知识点/">
-            
-                <span>FFmpeg</span>
-        </a>
-        <div class="abstract-content">
-            #RTMP推流  知识点AVFormatContext重点字节在使用FFMPEG进行开发的时候，AVFormatContext是一个贯穿始终的数据结构，很多函数都要用到它作为参数。它是FFMPEG解封装（flv，mp4，rmvb，avi）功能的结构体。
-雷神整理：
-
-struct AVInputFormat *iformat：输入数据的封装格式
-AVIOContext *pb：输入数据的缓存
-unsigned int nb_streams：视音频流的个数
-AVStream **streams：视音频流
-char filename[1024]：文件名
-int64_t duration：时长...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/25</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/25/暂存/">
-            
-                <span>直播工具画中画功能</span>
-        </a>
-        <div class="abstract-content">
-            画中画进度
-新增功能添加了切换桌面与摄像头大小切换的功能，通过RtmpManager中m_pPreView控制
-添加了新的小图层，目前大小和位置为固定状态，可在CVideoShowMain::DrawVideoCamGDI()中调整
-具体实现：
-1、切换大小
-在主函数中调用SetPreviewShow()方法更改 大小标识m_pPreView;当m_pPreView 为true时 桌面窗口大
-直播桌面时  RtmpManager::screenCaptureFun() 通过m_pPreView状态 ，调整DIB数据输出位置，改变大小。直播摄像头时 CVideoCaptureRender:...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/25</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/25/使用代理IP池/">
-            
-                <span>使用代理IP池</span>
-        </a>
-        <div class="abstract-content">
-            使用IP代理池 proxy_pool 代理池源码：点这里
- 或者： 1git clone git@github.com:jhao104/proxy_pool.git
-下载安装数据库官网下载点》》这里压缩包解压到目录即可
-打开数据库12cd D:\Redis-x64-3.2.100redis-server.exe redis.windows.conf
-打开新的cmd窗口12redis-cli.exe -h 127.0.0.1 -p 6379127.0.0.1:6379&gt;ping
-输出为PONG即成功
-或者加入系统服务 下次直接启动即可 也可自动打开1234//加入系统服务redis-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/25</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/05</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="日常">日常</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="scrapy">scrapy</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="IP代理池">IP代理池</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/25/FFmpeg+RECT推流部分/">
-            
-                <span>FFmpeg部分知识点</span>
-        </a>
-        <div class="abstract-content">
-            #RTMP推流AVFormatContext在使用FFMPEG进行开发的时候，AVFormatContext是一个贯穿始终的数据结构，很多函数都要用到它作为参数。它是FFMPEG解封装（flv，mp4，rmvb，avi）功能的结构体。
-struct AVInputFormat *iformat：输入数据的封装格式
-AVIOContext *pb：输入数据的缓存
-unsigned int nb_streams：视音频流的个数
-AVStream **streams：视音频流
-char filename[1024]：文件名
-int64_t duration：时长（单位：微秒us，转换为秒需要除...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/25</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/25/note/">
-            
-                <span>使用代理IP池</span>
-        </a>
-        <div class="abstract-content">
-            ##编译FFmpeg所运行命令./configure –arch=x86 –target-os=win32 –enable-shared –disable-static –enable-memalign-hack –toolchain=msvc –enable-gpl –enable-libx264 –enable-libfdk_aac –enable-nonfree –disable-optimizations –extra-cflags=”-I./add_lib/include” –extra-ldflags=”-LIBPATH:./add_lib/lib” –extra-ldfla...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/25</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/25/push_log/">
-            
-                <span>日志对应</span>
-        </a>
-        <div class="abstract-content">
-            日志推送
-Key：PutClick用户主动点击操作
-####msg:
-
-登陆成功 LoginSuc
-登陆失败 LoginFail
-开始直播 StartBro
-关闭直播 StopBro
-开始录制 StartRecSuc
-停止录制 StopRec
-录制开启失败（未开启直播）StartRecFailed 
-关闭窗口 CloseWin
-最小化窗口 MinBth
-直播窗口 windowsWnd
-直播软件 software
-打开降噪 NsOpen
-关闭降噪 NsClose
-打开背景音乐 MixOpen
-关闭背景音乐 MixClose
-刷新配置_刷新成功 RefreshChange
-刷新配置_未刷新 ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/25</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/03/11/IOS端Thor-Banana免费使用/">
-            
-                <span>IOS端Thor+Banana免费使用</span>
-        </a>
-        <div class="abstract-content">
-            阅读须知：1、此教程会用到电脑 手边没有电脑的等晚点有电脑再看2、另外过程中会涉及到Apple账号登陆，账号密码加微信索取（主页有二维码）3、需要下载到的app：Thor1.34、TestFlight、Banana   Thor需要装两遍，需要电脑安装同步推软件进行验证，并且使用过程较为繁琐，不能保证短期内不失效，所以嫌麻烦的还是去用小火箭。
-教程开始：首先下载thor1.2，thor1.34开始加入设备验证，不能多台账户同时存在。点这里下载
-未完….
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="科学上网、梯子、教程">科学上网、梯子、教程</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/03/05/PhotoShop-CC-2018-弹窗内存不足/">
-            
-                <span>[Untitled Post]</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/02/06/Heroku搭建自己的ss服务器/">
-            
-                <span>Heroku搭建自己的ss服务器</span>
-        </a>
-        <div class="abstract-content">
-            前（Fei）言（Hua）Heroku是日本一家网站。为开发者提供了免费部署项目的服务器。虽然访问Heroku是被qiang的。但是用Heroku部署后的应用(saas/web app)其主机在美国和欧洲，且主机地址没有被qiang。利用这一点就可以免费搭建一个自己的ss服务器。
-速度基本够满足日用吧，看视频的话稍微费点劲
-注册Heroku到这里注册： https://signup.heroku.com
-注：只能使用gmail邮箱注册，国内主流邮箱都没有用
-部署登录上你的Heroku之后，
-—–》》》点这里《《《—–
-
-App name
-起个名字。是唯一标识的。会提示你可不可用。
-KEY
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="教程">教程</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="SS">SS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Heroku">Heroku</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="blog">blog</a>
     
 </div>
             
@@ -664,11 +387,103 @@ KEY
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">NEXT &#62;</a>
+        <a class="extend prev" rel="prev" href="/">&#60; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
     </nav>
     
 </main>
             <!-- profile -->
+            
+            <div class="profile">
+    <img class="profile-avatar" alt="avatar" src="/avatar/Misaka.jpg">
+    <div class="profile-name">今晚做个好梦</div>
+    
+    <div class="profile-signature">
+        Wake me up next month
+    </div>
+    
+    
+    <div class="profile-social">
+        
+    
+        
+            
+                <a href="mailto:1571148259@qq.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/gf157" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/example_qr.png">
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="//weibo.com/3953058920/profile?rightmod=1&wvr=6&mod=personinfo" class="iconfont-archer weibo" target="_blank" title="weibo"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="//space.bilibili.com/23048619" class="iconfont-archer bilibili" target="_blank" title="bilibili"></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    
+    
+        <div class="about-me">
+            <a href="/about">ABOUT ME</a>
+        </div>
+    
+</div>
             
         </div>
         <footer class="footer footer-unloaded">
